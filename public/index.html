@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<!-- htmlのコード -->
+
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>家計簿</title>
+        <link rel="stylesheet" href="index.css">
+        <!-- Bootstrap CSS 読み込み -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Google フォント -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    </head>
+    <body style="font-family: 'Noto Sans JP', Sans-serif;">
+
+    <div class="container my-4 text-center">
+        <h1><span id="nowMonth"></span>月<span id="nowDate"></span>日（<span id="nowWeek"></span>）曜日</h1>
+    </div>
+
+    <div class="container mb-4">
+        <label for="user_select" class="form-label">ユーザー切り替え</label>
+        <select id="user_select" class="form-select">
+            <option value="user_1">ユーザー1</option>
+            <option value="user_2">ユーザー2</option>
+            <option value="self">自分</option>
+        </select>
+
+    </div>
+
+    <!-- 時給換算表示 -->
+    <div class="container text-center mb-4">
+
+        <div id="hourly" class="hourly">
+            <h4>消費の時給換算(今日)</h4>
+            <p class="fs-3 text-danger">-<span id="hourly_wage">1000</span>円</p>
+            <h4>消費の時給換算（今月）</h4>
+            <p class="fs-3 text-danger">-<span id="hourly_wage_month">1000</span>円</p>
+        </div>
+    </div>
+
+
+    <!-- 支出フォーム -->
+    <div id="now_expenditure_id" class="container mb-4">
+
+        <!-- <div id="now_expenditure_id"> -->
+            <div class="mb-3">
+                <label for="now_expenditure">今の買い物の金額</label>
+                <input id="now_expenditure" value="0" type="number" min="0" step="1">
+            </div>
+            <div class="mb-3">
+                <label for="type_of_expenditure" class="form-label">支出の種類</label>
+                <select id="type_of_expenditure" class="form-select">
+                    <option value="investment">投資</option>
+                    <option value="waste">浪費</option>
+                    <option value="necessities">日用品</option>
+                    <option value="eating_out">外食</option>
+                    <option value="delivery">出前</option>
+                    <option value="book">本</option>
+                    <option value="teaching_material">教材</option>
+                    <option value="convenience">コンビニ</option>
+                    <option value="food">食品</option>
+                    <option value="other">その他</option>
+                </select>
+                <label for="remark" class="form-label">備考（任意）</label>
+                <input id="remark" type="text" class="form-control" placeholder="例：酒、つまみも含む"></input>
+            </div>            
+            <button id="send_expenditure" class="btn btn-primary w-100">送信</button>
+        <!-- </div> -->
+    </div>
+
+    <!-- 収入フォーム -->
+    
+    <!-- <div id="now_income_id" class="container mb-4">
+        <label for="now_income" class="form-label">今の収入の金額</label>
+        <input id="now_income" value="0" type="number" min="0" step="0" class="form-control mb-2">
+        <button id="send_income" class="btn btn-success w-100">送信</button>
+    </div> -->
+
+    <!-- 合計出費の表示 -->
+    <div class="container mb-4">
+        <div class="row text-center">
+
+            <div class="col-12 col-md-4 mb-3">
+                <!-- <div id="totals"> -->
+                <div class="card">
+                    <div id="total_today" class="card-body">
+                        <h5>今日の出費</h5>
+                        <p id="today_expense" class="fs-4 text-danger">100</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div id="total_week">
+                            <h5>今週の出費</h5>
+                            <p id="week_expense" class="fs-4 text-danger">760</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div id="total_month">
+                            <h5>今月の出費</h5>
+                            <p id="month_expense" class="fs-4 text-danger">765</p>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+            <!-- </div> -->
+        </div>
+    </div>
+    
+    <!-- 支出カテゴリのテーブル -->
+    <div class="container mb-4">
+        <h4 class="text-center mb-3"><span id="table_month_span"></span>月の支出分類</h4>
+        <table class="table table-bordered text-center">
+            <thead class="table-light">
+                <tr>
+                    <th>カテゴリ</th>
+                    <th>出費</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><th>投資</th><td id="investment">1000</td></tr>
+                <tr><th>浪費</th><td id="waste">1000</td></tr>
+                <tr><th>日用品</th><td id="necessities">1000</td></tr>
+                <tr><th>外食</th><td id="eating_out">1000</td></tr>
+                <tr><th>出前</th><td id="delivery">1000</td></tr>
+                <tr><th>本</th><td id="book">1000</td></tr>
+                <tr><th>教材</th><td id="teaching_material">1000</td></tr>
+                <tr><th>コンビニ</th><td id="convenience">1000</td></tr>
+                <tr><th>食品</th><td id="food">1000</td></tr>
+                <tr><th>その他</th><td id="other">1000</td></tr>
+            </tbody>
+        <!-- <caption>収入と支出</caption> -->
+        </table>
+    </div>
+        
+    <!-- 円グラフ -->
+    <div class="container text-center mb-5">
+        <!-- <div style="text-align: center;"> -->
+            <canvas id="pieChart" width="500" height="350"></canvas>
+        <!-- </div> -->
+    </div>
+
+    <script src="index.js"></script>
+    </body>
+</html>

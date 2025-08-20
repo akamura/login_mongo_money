@@ -1,0 +1,82 @@
+.hourly {
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hourly > p:nth-child(1), .hourly > p:nth-child(3) {
+    font-size: 25px;
+    font-weight:bold;
+}
+
+.hourly > p:nth-child(2), .hourly > p:nth-child(4) {
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+}
+
+
+#totals {
+    margin: 0 auto;
+    width: 50%;
+    /* background-color: aqua; */
+    text-align: center;
+}
+
+.red_moji {
+    color: red;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+table {
+    width: 50%;
+    /* display: flex; */
+    /* align-items: center; */
+    margin: 0 auto;
+}
+
+td {
+    text-align: center;
+}
+
+#now_expenditure_id {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+#now_income_id {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* canvas { */
+    /* width:300px;
+    height: 300px; */
+    /* margin: 0 auto; */
+
+/* } */
+
+canvas {
+    margin: 0 auto;
+    display: block;
+}
+
+table th {
+    background-color: #f1f1f1;
+}
+
+.red_moji {
+    color: red;
+}
